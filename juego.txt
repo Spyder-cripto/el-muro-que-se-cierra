@@ -184,6 +184,8 @@ SOUNDS
 =======
 
 Caja MOVE 36772507
+Player MOVE 23783707
+Player CANTMOVE 27189102
 endlevel 83744503
 startgame 92244503
 
