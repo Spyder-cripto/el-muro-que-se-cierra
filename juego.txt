@@ -1,0 +1,377 @@
+title El Muro que se Cierra
+author Spider
+homepage spyder-cripto.github.io
+sprite_size 16
+background_color #c2dcaa
+text_color #2f5a2a
+key_repeat_interval 0.2
+noaction
+text_controls Flechas o deslizar: mover. Z: deshacer. R: reiniciar.
+
+========
+OBJECTS
+========
+
+Background
+#e4f3d2 #cfe7b4 #ffffff #f6d65c
+1000000100000010
+0000000000000000
+0000000000000000
+0100000010300001
+0000000000000003
+0000000000000000
+0010000001000000
+0000000000000000
+0002000000000000
+0001000000100000
+0000000000003000
+0000000000000000
+0000100020010000
+0000000000000000
+0000000000000000
+0000010000001000
+
+Target
+#6b4423 #e0507a #ffd166
+................
+.....0.0.0.0....
+..0.........0...
+.............0..
+..............0.
+.0.....11.......
+.......11.....0.
+.0...112211.....
+.....112211...0.
+.0.....11.......
+.......11.....0.
+.0..............
+..0.............
+...0.........0..
+....0.0.0.0.....
+................
+
+Wall
+#5fae5c #3f8a45 #8fd17f
+1100001111000011
+1000000110000001
+0002000000020000
+0022000000220000
+0000000000000000
+0000000000000000
+1000000110000001
+1100001111000011
+1100001111000011
+1000000110000001
+0002000000020000
+0022000000220000
+0000000000000000
+0000000000000000
+1000000110000001
+1100001111000011
+
+Player
+#3a2a14 #f2c14e #f2c79b #ffffff #b9504a #4f9a4f #f2c14e #7a4a2a
+................
+.....000000.....
+....01111110....
+...0111111110...
+...0000000000...
+...0222222220...
+...0230220320...
+...0222222220...
+....02244220....
+.....000000.....
+...0556556550...
+..020555555020..
+..020555555020..
+...0055555500...
+....05500550....
+....000..000....
+
+Crate
+#6e4129 #b07a46 #d9a66b
+................
+.00000000000000.
+.01111111111110.
+.01112222221110.
+.01111222211110.
+.01211122111210.
+.01221111112210.
+.01222111122210.
+.01222111122210.
+.01221111112210.
+.01211122111210.
+.01111222211110.
+.01112222221110.
+.01111111111110.
+.00000000000000.
+................
+
+CrateDone
+#6e4129 #b07a46 #d9a66b #e0507a #ffd166 #3f8f4a #ffffff
+................
+.00000000000000.
+.01111111111110.
+.01112233221110.
+.01111333311110.
+.01233333333210.
+.01233344333210.
+.01223144132210.
+.01223333332210.
+.01223333332210.
+.01211355351210.
+.01115555211110.
+.01112255221110.
+.01111111111110.
+.00000000000000.
+................
+
+Topadora
+#3b4a2a #f2c14e #3b4a2a #fff4d6
+0000000000000000
+0000000000000000
+0022111222111200
+0023112221113200
+0011122211122200
+0011222111222100
+0012221112221100
+0022211122211100
+0022111222111200
+0021112221112200
+0011122211122200
+0011222111222100
+0013221112223100
+0022211122211100
+0000000000000000
+0000000000000000
+
+Cristal
+#5fa8c8 #e2f6ff #ffffff #c4ecfb
+0000000000000000
+0333333333333330
+0311111221111130
+0311111122111130
+0311111112211130
+0311111111221130
+0311112111122130
+0311112211112230
+0311111221111230
+0311111122111130
+0311111112211130
+0311111111221130
+0311111111122130
+0311111111112130
+0333333333333330
+0000000000000000
+
+=======
+LEGEND
+=======
+
+. = Background
+/ = Wall
+@ = Player
+o = Crate
++ = Target
+& = Crate and Target
+* = Player and Target
+T = Topadora
+C = Cristal
+Caja = Crate or CrateDone
+
+=======
+SOUNDS
+=======
+
+Caja MOVE 36772507
+endlevel 83744503
+startgame 92244503
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Target
+Player, Wall, Crate, CrateDone, Topadora, Cristal
+
+======
+RULES
+======
+
+( Collapsable Sokoban, de Franklin P. Dyer: empujas una caja; los muros de tu fila y de tu columna dan un paso hacia ti )
+[ > Player | Caja ] -> [ > Player | > Caja ]
+[ Wall | ... | Player ] -> [ > Wall | ... | Player ]
+
+( Novedades: el CRISTAL huye de ti; la TOPADORA se acerca como un muro y empuja la caja que tenga delante )
+[ Cristal | ... | Player ] -> [ < Cristal | ... | Player ]
+[ Topadora | ... | Player ] -> [ > Topadora | ... | Player ]
+[ > Topadora | Caja ] -> [ > Topadora | > Caja ]
+
+( La caja en su diana se dibuja distinta; solo es adorno )
+late [ Crate Target ] -> [ CrateDone Target ]
+late [ CrateDone no Target ] -> [ Crate ]
+
+==============
+WINCONDITIONS
+==============
+
+All Target on Caja
+
+=======
+LEVELS
+=======
+
+message Nivel 1 de 15 · Me siguen
+message Este jardín tiene algo raro...
+message Cada vez que me muevo, los setos de mi fila y de mi columna dan un paso hacia mí.
+
+./...
++....
+.....
+...o.
+...@.
+
+message Nivel 2 de 15 · Pared con pared
+message Los setos no empujan las cajas: se paran al chocar.
+
+....+
+././.
+.....
+.o...
+..@..
+
+message Nivel 3 de 15 · Arrimados
+message Si me choco con algo, no me muevo... pero los setos sí.
+
+./...
+./o..
+.....
+....@
+....+
+
+message Nivel 4 de 15 · El pasillo
+message Hay que pensar bien en qué fila me pongo.
+
++.....
+......
+......
+..//..
+....o.
+..@./.
+
+message Nivel 5 de 15 · Encerrona
+message Un seto bien traído vale más que mil empujones.
+
++.....
+......
+..../.
+./....
+....o.
+.@/...
+
+message Nivel 6 de 15 · Cerrojo
+message Cuantos más setos, más cerca los tengo.
+
++..../.
+.......
+..../..
+/...o/.
+.......
+.......
+..@/...
+
+message Nivel 7 de 15 · Dos cajas
+message Ahora, dos cajas a la vez.
+
++......
+..../..
+...../.
+....oo+
+....../
+../....
+@......
+
+message Nivel 8 de 15 · La topadora
+message ¿Y esto? ¡Una topadora!
+message Se acerca como un seto... y empuja las cajas que encuentra.
+
+.T..@
+.o...
+.....
+..+..
+T....
+
+message Nivel 9 de 15 · Obras
+message Una caja empujada a distancia es una caja que no empujo yo.
+
+.+.@.
+.././
+.....
+...o.
+..T..
+
+message Nivel 10 de 15 · Dos topadoras
+message Cada una tira hacia un lado.
+
+......
+......
+.o....
+T.....
+/..T..
+...@.+
+
+message Nivel 11 de 15 · Empujón
+message Una topadora empuja; la otra estorba.
+
+.......
+.../...
+....T..
+.....o/
++..T...
+.......
+..@....
+
+message Nivel 12 de 15 · Hora punta
+message Topadoras y setos a la vez: ¡qué atasco!
+
+/..../.
+.......
+...+...
+.......
+../../.
+.T...o.
+..@/...
+
+message Nivel 13 de 15 · Cristal
+message ¿Un bloque de cristal?
+message Este hace lo contrario: cuando me pongo en su fila o en su columna, huye de mí.
+
++C./.
+@.o..
+.....
+.....
+.....
+
+message Nivel 14 de 15 · Huida
+message El cristal no se deja atrapar.
+
+..@...
+..C...
+......
++/....
+....o.
+../...
+
+message Nivel 15 de 15 · Espejito
+message Unos se acercan y otros se alejan.
+
+....@.
+......
+......
+/....C
+.oC...
+/.../+
+
+message ¡El jardín ya no se cierra!
+message Gracias por jugar.
