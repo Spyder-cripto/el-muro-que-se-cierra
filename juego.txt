@@ -222,7 +222,7 @@ All Target on Caja
 LEVELS
 =======
 
-message Nivel 1 de 15 · Me siguen
+message Nivel 1 de 16 · Me siguen
 message Este jardín tiene algo raro...
 message Cada vez que me muevo, los setos de mi fila y de mi columna dan un paso hacia mí.
 
@@ -232,7 +232,7 @@ message Cada vez que me muevo, los setos de mi fila y de mi columna dan un paso 
 ...o.
 ...@.
 
-message Nivel 2 de 15 · Pared con pared
+message Nivel 2 de 16 · Pared con pared
 message Los setos no empujan las cajas: se paran al chocar.
 
 ....+
@@ -241,7 +241,7 @@ message Los setos no empujan las cajas: se paran al chocar.
 .o...
 ..@..
 
-message Nivel 3 de 15 · Arrimados
+message Nivel 3 de 16 · Arrimados
 message Si me choco con algo, no me muevo... pero los setos sí.
 
 ./...
@@ -250,7 +250,7 @@ message Si me choco con algo, no me muevo... pero los setos sí.
 ....@
 ....+
 
-message Nivel 4 de 15 · El pasillo
+message Nivel 4 de 16 · El pasillo
 message Hay que pensar bien en qué fila me pongo.
 
 +.....
@@ -260,7 +260,7 @@ message Hay que pensar bien en qué fila me pongo.
 ....o.
 ..@./.
 
-message Nivel 5 de 15 · Encerrona
+message Nivel 5 de 16 · Encerrona
 message Un seto bien traído vale más que mil empujones.
 
 +.....
@@ -270,7 +270,7 @@ message Un seto bien traído vale más que mil empujones.
 ....o.
 .@/...
 
-message Nivel 6 de 15 · Cerrojo
+message Nivel 6 de 16 · Cerrojo
 message Cuantos más setos, más cerca los tengo.
 
 +..../.
@@ -281,7 +281,7 @@ message Cuantos más setos, más cerca los tengo.
 .......
 ..@/...
 
-message Nivel 7 de 15 · Dos cajas
+message Nivel 7 de 16 · Dos cajas
 message Ahora, dos cajas a la vez.
 
 +......
@@ -292,7 +292,7 @@ message Ahora, dos cajas a la vez.
 ../....
 @......
 
-message Nivel 8 de 15 · La topadora
+message Nivel 8 de 16 · La topadora
 message ¿Y esto? ¡Una topadora!
 message Se acerca como un seto... y empuja las cajas que encuentra.
 
@@ -302,7 +302,7 @@ message Se acerca como un seto... y empuja las cajas que encuentra.
 ..+..
 T....
 
-message Nivel 9 de 15 · Obras
+message Nivel 9 de 16 · Obras
 message Una caja empujada a distancia es una caja que no empujo yo.
 
 .+.@.
@@ -311,7 +311,7 @@ message Una caja empujada a distancia es una caja que no empujo yo.
 ...o.
 ..T..
 
-message Nivel 10 de 15 · Dos topadoras
+message Nivel 10 de 16 · Dos topadoras
 message Cada una tira hacia un lado.
 
 ......
@@ -321,7 +321,7 @@ T.....
 /..T..
 ...@.+
 
-message Nivel 11 de 15 · Empujón
+message Nivel 11 de 16 · Empujón
 message Una topadora empuja; la otra estorba.
 
 .......
@@ -332,7 +332,7 @@ message Una topadora empuja; la otra estorba.
 .......
 ..@....
 
-message Nivel 12 de 15 · Hora punta
+message Nivel 12 de 16 · Hora punta
 message Topadoras y setos a la vez: ¡qué atasco!
 
 /..../.
@@ -343,7 +343,7 @@ message Topadoras y setos a la vez: ¡qué atasco!
 .T...o.
 ..@/...
 
-message Nivel 13 de 15 · Cristal
+message Nivel 13 de 16 · Cristal
 message ¿Un bloque de cristal?
 message Este hace lo contrario: cuando me pongo en su fila o en su columna, huye de mí.
 
@@ -353,7 +353,7 @@ message Este hace lo contrario: cuando me pongo en su fila o en su columna, huye
 .....
 .....
 
-message Nivel 14 de 15 · Huida
+message Nivel 14 de 16 · Huida
 message El cristal no se deja atrapar.
 
 ..@...
@@ -363,7 +363,7 @@ message El cristal no se deja atrapar.
 ....o.
 ../...
 
-message Nivel 15 de 15 · Espejito
+message Nivel 15 de 16 · Espejito
 message Unos se acercan y otros se alejan.
 
 ....@.
@@ -372,6 +372,17 @@ message Unos se acercan y otros se alejan.
 /....C
 .oC...
 /.../+
+
+message Nivel 16 de 16 · Todos a una
+message Gran final.
+message Esta vez hacen falta la topadora y el cristal.
+
+.....+
+./....
++..../
+......
+oo.//.
+TC...@
 
 message ¡El jardín ya no se cierra!
 message Gracias por jugar.

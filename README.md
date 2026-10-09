@@ -30,6 +30,7 @@ Niveles propios, cada uno con su mínimo demostrado con las reglas del propio ju
 13. Cristal: mínimo 12 pasos
 14. Huida: mínimo 15 pasos
 15. Espejito: mínimo 20 pasos
+16. Todos a una: mínimo 31 pasos
 
 ## Créditos
 - Niveles, topadora, cristal, arte 16-bit y tarjetas: **Spider** (Fali + Claude), 2026
